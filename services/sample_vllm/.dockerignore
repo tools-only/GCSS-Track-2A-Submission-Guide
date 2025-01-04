@@ -1,0 +1,11 @@
+# ignore any of the following directories
+# Model Directories
+.models
+models
+
+# Logs Directories
+logs
+
+# Python Env
+venv
+.venv

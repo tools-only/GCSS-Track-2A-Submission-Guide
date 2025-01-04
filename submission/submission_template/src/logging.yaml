@@ -1,0 +1,46 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+    base_logging_fmt:
+        format: '%(levelname)s:     [%(asctime)s] - %(name)s - %(message)s'
+        datefmt: '%Y-%m-%d %H:%M:%S'
+
+    respond_to_tracker_fmt:
+        format: '%(message)s'
+
+handlers:
+    console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: base_logging_fmt
+        stream: ext://sys.stdout
+
+       
+loggers:
+    dev_app_logger:
+        level: DEBUG
+        handlers: [console]
+        propagate: no
+
+    # Re-set FastAPI loggers to use the format defined here
+    uvicorn:
+        level: INFO
+        handlers: [console]
+        propagate: False
+    uvicorn.error:
+        level: INFO
+        handlers: [console]
+        propagate: False
+    uvicorn.access:
+        level: INFO
+        handlers: [console]
+        propagate: False
+    fastapi:
+        level: DEBUG
+        handlers: [console]
+        propagate: False
+
+root:
+    level: INFO
+    handlers: [console]
