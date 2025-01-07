@@ -103,7 +103,7 @@ The general software specification
 #### Docker Container Details
 
 ##### Max Docker Container Size
-Your solution upon saving [using docker save](#compress-your-docker-container-to-targz-format-using-docker-save) must not exceed the maximum file size of 25 GiB.
+Your solution upon saving [using docker save](#compress-your-docker-container-to-targz-format-using-docker-save) must not exceed the maximum file size of 30 GiB.
 
 
 ##### Submitted Docker Container Isolation
