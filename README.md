@@ -29,7 +29,7 @@ The allocated time given for the setup to complete all **430** input prompts is 
 
 ### [SERVICE] Victim Models: `services/sample_vllm`
 #### Victim Models
-Each `Victim Model` may be queried at the RESTful API server specified by the environment variable `GCSS_SERVER` with `POST /chat/complete`, while populating the body with the following sample JSON payload:
+Each `Victim Model` may be queried at the RESTful API server specified by the environment variable `GCSS_SERVER` with `POST /chat/respondTo`, while populating the body with the following sample JSON payload:
 
 ```
 {
@@ -40,7 +40,7 @@ Each `Victim Model` may be queried at the RESTful API server specified by the en
 
 Each `Victim Model` is identified by an integer `1`, `2`, or `3`, with their identities consistent throughout the entirety of Track 2 (i.e. the `Victim Model` with the identity of `1` will be the same Large Language Model throughout, even though we do not reveal which of the Large Language Models it is).
 
-The endpoint `/chat/complete` does not possess any form of memory.
+The endpoint `/chat/respondTo` does not possess any form of memory.
 
 The return from each call has the following JSON format:
 
@@ -108,7 +108,7 @@ As such, your solution must have all necessary modules, model weights, and other
 
 
 #### Participant's Defense Models API
-The participants' Docker container needs to implement the aforementioned `POST /chat/complete` API.
+The participants' Docker container needs to implement the aforementioned `POST /chat/respondTo` API.
 ```
 {
     "model": 1,          // 1, 2, 3 corresponding to the three Victim Models.
