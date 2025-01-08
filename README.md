@@ -40,7 +40,7 @@ Each `Victim Model` may be queried at the RESTful API server specified by the en
 
 Each `Victim Model` is identified by an integer `1`, `2`, or `3`, with their identities consistent throughout the entirety of Track 2 (i.e. the `Victim Model` with the identity of `1` will be the same Large Language Model throughout, even though we do not reveal which of the Large Language Models it is).
 
-The endpoint `/chat/complete` does not possess any form of memory -- you **must** provide all the necessary context using the `messages` key in the payload.
+The endpoint `/chat/complete` does not possess any form of memory.
 
 The return from each call has the following JSON format:
 
