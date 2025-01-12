@@ -4,7 +4,7 @@ from tqdm import tqdm
 import re
 import gc
 
-from vllm import LLM
+# from vllm import LLM
 import torch
 
 from .utils import (
@@ -187,7 +187,8 @@ class WildGuardVLLM(WildGuard):
         if ephemeral_model:
             self.model = None
         else:
-            self.model = LLM(model=MODEL_NAME, tokenizer_mode="slow")
+        #     self.model = LLM(model=MODEL_NAME, tokenizer_mode="slow")
+            print("no more vllm")
 
     @torch.inference_mode()
     def _classify_batch(
