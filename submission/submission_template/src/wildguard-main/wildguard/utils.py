@@ -2,7 +2,9 @@ import multiprocessing
 import dataclasses
 from dataclasses import dataclass
 from enum import Enum
-from types import UnionType, NoneType
+# from types import UnionType, NoneType
+from types import UnionType
+NoneType = type(None)
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from vllm import LLM, SamplingParams
